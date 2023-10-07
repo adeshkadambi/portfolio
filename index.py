@@ -13,6 +13,11 @@ def markdown(filename: str):
         st.markdown(f.read())
 
 
+def header():
+    st.image("files/logo.png", width=100)
+    st.title("Hi, I'm Adesh Kadambi!")
+
+
 def socials():
     github, linkedin, scholar, email = st.columns(4)
 
@@ -44,24 +49,27 @@ def socials():
 
 
 def about():
-    st.image("files/logo.png", width=100)
-    st.title("Hi, I'm Adesh Kadambi!")
-    socials()
     markdown("about-me")
     st.image("files/interests.png")
     markdown("research-interests")
     markdown("bio")
-    st.download_button(
-        label="Download CV",
-        data="files/kadambi_cv.pdf",
-        file_name="kadambi_cv.pdf",
+    st.link_button(
+        "Download CV",
+        "https://docs.google.com/document/d/1VgZDnTwb6rSEfRq_3QUtteR8fhvRNxnaCvdt85iupIQ/edit?usp=sharing",
         type="primary",
     )
 
 
+def publications():
+    markdown("publications")
+
+
 def main():
     local_css("styles.css")
+    header()
+    socials()
     about()
+    # publications()
 
 
 if __name__ == "__main__":
