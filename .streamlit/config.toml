@@ -1,0 +1,10 @@
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#325BBA"
+font = "serif"
+
+[server]
+runOnSave = true
